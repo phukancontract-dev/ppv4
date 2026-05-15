@@ -1,4 +1,4 @@
-$url = "https://raw.githubusercontent.com/phukancontract-dev/ppv4/main/ReShade_Setup_6.7.3.exe
+$url = "https://raw.githubusercontent.com/phukancontract-dev/ppv4/main/ReShade_Setup_6.7.3.exe"
 
 $tempPath = Join-Path $env:TEMP "ReShade_Setup_6.7.3.exe"
 
