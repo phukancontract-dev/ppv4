@@ -5,7 +5,7 @@ $tempPath = Join-Path $env:TEMP "ReShade_Setup_6.7.3.exe"
 Write-Host "Downloading..." -ForegroundColor Cyan
 
 try {
-    Invoke-WebRequest -Uri $url -OutFile $tempPath -ErrorAction Stop
+    Invoke-WebRequest -Uri $url -OutFile $tempPath -UseBasicParsing -ErrorAction Stop
 
     if (!(Test-Path $tempPath)) {
         throw "Download failed: file not found"
@@ -16,13 +16,11 @@ try {
     }
 
     Write-Host "Download completed." -ForegroundColor Green
-
     Write-Host "Launching installer..." -ForegroundColor Green
 
     Start-Process -FilePath $tempPath -Wait
 
     Write-Host "Installer finished." -ForegroundColor Magenta
-
     Write-Host "Cleaning temporary file..." -ForegroundColor Yellow
 
     Remove-Item -Path $tempPath -Force -ErrorAction SilentlyContinue
